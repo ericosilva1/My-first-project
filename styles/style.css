@@ -1,0 +1,43 @@
+.board {
+    border: 1px solid;
+    width: 70vw;
+    height: 50vw;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row-one {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+};
+.row-two {
+    width: 50px;
+    height: 50px;
+    /* background-color: red; */
+};
+.row-three {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+};
+.row-four {
+    width: 50px;
+    height: 50px;
+    /* background-color: red; */
+};
+.row-five {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+};
+.row-six {
+    width: 50px;
+    height: 50px;
+    /* background-color: red; */
+};
+.row-seven {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+};
