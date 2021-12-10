@@ -1,20 +1,71 @@
-.board {
-    border: 1px solid;
-    width: 70vw;
-    height: 50vw;
+body {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
 }
 
-.row-one {
+#title{
+    width: 90vw;
+    height: 33vw;
+    margin-top: 2rem;
+}
+.board {
+    /* border: 4vw solid #6d351a; */
+    position: absolute;
+    left: 5.5vw;
+    bottom: 6.5vw;
+    width: 78vw;
+    height: 72vw;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    background-color: rgb(22, 22, 189);
+}
+
+.board div{
+    width: 2.19rem;
+    height: 2.19rem;
+    border: 1px solid rebeccapurple;
+    border-radius: 50%;
+    background-color: white;
+}
+
+#bordered{
+    position: relative;
+    width: 89vw;
+    height: 86vw;
+    background-image: url("../images/background-border.png");
+    background-size: cover;
+    background-repeat: repeat;
+}
+
+.player1 {
+    background-color: red;
+    border-radius: 50%;
+}
+
+.player2 {
+    background-color: yellow;
+    border-radius: 50%;
+}
+
+.playerCpu {
+    background-color: yellowgreen;
+    border-radius: 50%;
+}
+
+/* .row-one {
     width: 50px;
     height: 50px;
     background-color: red;
-};
-.row-two {
+}; */
+/* .row-two {
     width: 50px;
     height: 50px;
-    /* background-color: red; */
+    background-color: red;
 };
 .row-three {
     width: 50px;
@@ -24,7 +75,7 @@
 .row-four {
     width: 50px;
     height: 50px;
-    /* background-color: red; */
+    background-color: red;
 };
 .row-five {
     width: 50px;
@@ -34,10 +85,10 @@
 .row-six {
     width: 50px;
     height: 50px;
-    /* background-color: red; */
+    background-color: red;
 };
 .row-seven {
     width: 50px;
     height: 50px;
     background-color: red;
-};
+}; */
