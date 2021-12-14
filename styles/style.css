@@ -11,27 +11,38 @@ body {
     height: 33vw;
     margin-top: 2rem;
 }
-.board {
-    /* border: 4vw solid #6d351a; */
+#board {
     position: absolute;
     left: 5.5vw;
     bottom: 6.5vw;
     width: 78vw;
     height: 72vw;
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    flex-direction: column;
     margin-top: 3rem;
     background-color: rgb(22, 22, 189);
 }
 
-.board div{
+.unit{
     width: 2.19rem;
     height: 2.19rem;
     border: 1px solid rebeccapurple;
     border-radius: 50%;
     background-color: white;
 }
+
+.rows{
+    display: flex;
+}
+
+.player1{
+    background-color: red;
+}
+
+.player2{
+    background-color: yellow;
+}
+
 
 #bordered{
     position: relative;
@@ -41,54 +52,3 @@ body {
     background-size: cover;
     background-repeat: repeat;
 }
-
-.player1 {
-    background-color: red;
-    border-radius: 50%;
-}
-
-.player2 {
-    background-color: yellow;
-    border-radius: 50%;
-}
-
-.playerCpu {
-    background-color: yellowgreen;
-    border-radius: 50%;
-}
-
-/* .row-one {
-    width: 50px;
-    height: 50px;
-    background-color: red;
-}; */
-/* .row-two {
-    width: 50px;
-    height: 50px;
-    background-color: red;
-};
-.row-three {
-    width: 50px;
-    height: 50px;
-    background-color: red;
-};
-.row-four {
-    width: 50px;
-    height: 50px;
-    background-color: red;
-};
-.row-five {
-    width: 50px;
-    height: 50px;
-    background-color: red;
-};
-.row-six {
-    width: 50px;
-    height: 50px;
-    background-color: red;
-};
-.row-seven {
-    width: 50px;
-    height: 50px;
-    background-color: red;
-}; */
