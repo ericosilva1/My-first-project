@@ -34,21 +34,26 @@ class Game {
       [0, 0, 0, 0, 0, 0, 0, 0],
       [0, 0, 0, 0, 0, 0, 0, 0],
     ];
-    this.player1 = "player one";
-    this.player2 = "player two";
+    this.player1 = "player1";
+    this.player2 = "player2";
+    this.activePlayer = this.player1;
   }
 
-  move(player, column) {
+  move(column) {
     for (let i = this.board.length - 1; i >= 0; i -= 1) {
       const element = this.board[i];
       console.log(element);
       if (element[column] === 0) {
-        element[column] = player;
-        const lineWin = this.checkLine(i, player);
-        const columnWin = this.checkColumn(column, player);
+        element[column] = this.activePlayer;
+        const lineWin = this.checkLine(i, this.activePlayer);
+        const columnWin = this.checkColumn(column, this.activePlayer);
        if (lineWin || columnWin) {
-           console.log(`${player} ganhou`)
-       } 
+           console.log(`${this.activePlayer} ganhou`);
+       } if (this.activePlayer === this.player1) {
+           this.activePlayer = this.player2
+       } else {
+        this.activePlayer = this.player1;
+       }
        return i;
       
       }
@@ -95,11 +100,12 @@ const pieces = document.getElementsByClassName('unit');
 [...pieces].forEach((piece)=>{
     piece.onclick = (event)=>{
         let currentColumn = event.target.classList[0].split("-")[1];
-        let line = game.move(game.player1, currentColumn);
+        let currentPlayer = game.activePlayer;
+        let line = game.move(currentColumn);
         let row = document.querySelector(`.row-${line}`);
         console.log(row);
         let unit = row.querySelector(`.column-${currentColumn}`);
-        unit.classList.add('player1');
+        unit.classList.add(currentPlayer);
     }
 });
 
