@@ -37,6 +37,8 @@ class Game {
     this.player1 = "player1";
     this.player2 = "player2";
     this.activePlayer = this.player1;
+    this.result = document.getElementById("result");
+    this.endGame = false;
   }
 
   move(column) {
@@ -47,15 +49,17 @@ class Game {
         element[column] = this.activePlayer;
         const lineWin = this.checkLine(i, this.activePlayer);
         const columnWin = this.checkColumn(column, this.activePlayer);
-       if (lineWin || columnWin) {
-           console.log(`${this.activePlayer} ganhou`);
-       } if (this.activePlayer === this.player1) {
-           this.activePlayer = this.player2
-       } else {
-        this.activePlayer = this.player1;
-       }
-       return i;
-      
+        if (lineWin || columnWin) {
+          this.result.innerHTML = `E o vencedor é o ${this.activePlayer}`;
+          console.log(`${this.activePlayer} ganhou`);
+          this.endGame = true;
+        }
+        if (this.activePlayer === this.player1) {
+          this.activePlayer = this.player2;
+        } else {
+          this.activePlayer = this.player1;
+        }
+        return i;
       }
     }
   }
@@ -73,12 +77,12 @@ class Game {
     console.log(count);
     if (count >= 4) {
       return true;
-    }else{
-        return false;
+    } else {
+      return false;
     }
   }
 
-  checkColumn(column, player){
+  checkColumn(column, player) {
     let count = 0;
     for (const element of this.board) {
       if (element[column] === player) {
@@ -89,24 +93,46 @@ class Game {
     }
     console.log(count);
     if (count >= 4) {
-        return true;
-    }else{
-        return false;
+      return true;
+    } else {
+      return false;
+    }
   }
 }
-}
-const game = new Game();
-const pieces = document.getElementsByClassName('unit');
-[...pieces].forEach((piece)=>{
-    piece.onclick = (event)=>{
-        let currentColumn = event.target.classList[0].split("-")[1];
-        let currentPlayer = game.activePlayer;
-        let line = game.move(currentColumn);
-        let row = document.querySelector(`.row-${line}`);
-        console.log(row);
-        let unit = row.querySelector(`.column-${currentColumn}`);
-        unit.classList.add(currentPlayer);
+let game = new Game();
+const pieces = document.getElementsByClassName("unit");
+[...pieces].forEach((piece) => {
+  piece.onclick = (event) => {
+    if (!game.endGame) {
+      let currentColumn = event.target.classList[0].split("-")[1];
+      let currentPlayer = game.activePlayer;
+      let line = game.move(currentColumn);
+      let row = document.querySelector(`.row-${line}`);
+      console.log(row);
+      let unit = row.querySelector(`.column-${currentColumn}`);
+      unit.classList.add(currentPlayer);
+      const whoPlay = document.getElementById("player-active");
+      whoPlay.innerHTML = game.activePlayer.toLocaleUpperCase();
     }
+  };
 });
 
+const reset = () => {
+  const pieces = document.getElementsByClassName("unit");
+  [...pieces].forEach((piece) => {
+    piece.classList.remove("player1");
+    piece.classList.remove("player2");
+  });
 
+  game = new Game();
+  const whoPlay = document.getElementById("player-active");
+  whoPlay.innerHTML = game.activePlayer.toLocaleUpperCase();
+
+  const result = document.getElementById("result");
+  result.innerHTML = "Vamos lá!!!";
+};
+
+const resetBtn = document.getElementById("reset");
+resetBtn.onclick = () => {
+  reset();
+};
