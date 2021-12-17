@@ -9,7 +9,7 @@ And it depends on the size of the screen.
 
 ## ABOUT THE GAME
 
-Connect Four (also known as Four Up, Plot Four, Find Four, Captain's Mistress, Four in a Row, Drop Four, and Gravitrips in the Soviet Union) is a two-player connection board game, in which the players and take turns dropping colored discs into a seven-column, six-row vertically grid. The pieces fall straight down, occupying the lowest available space within the column. The objective of the game is to be the first to form a horizontal or vertical line of four of one's own discs.
+Connect Four (also known as Four Up, Plot Four, Find Four, Captain's Mistress, Four in a Row, Drop Four, and Gravitrips in the Soviet Union) is a two-player connection board game, in which the players and take turns dropping colored discs into a eight-column, seven-row vertically grid. The pieces fall straight down, occupying the lowest available space within the column. The objective of the game is to be the first to form a horizontal or vertical line of four of one's own discs.
 
 ## GAME INSTRUCTIONS
 
